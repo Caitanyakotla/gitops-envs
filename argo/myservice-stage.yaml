@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:org/gitops-envs.git
+    repoURL: git@github.com:Caitanyakotla/gitops-envs.git
     targetRevision: main
     path: apps/myservice/overlays/stage
   destination:

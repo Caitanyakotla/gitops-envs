@@ -1,8 +1,8 @@
 image:
   repository: trialax5htd.jfrog.io/docker-local/myservice
-  tag: "STAGE_TAG_WILL_BE_SET_BY_CI"
+  tag: "1.0.0"
 
 replicaCount: 2
 route:
   enabled: true
-  host: myservice-stage.apps.example.internal
+  host: myservice-stage.apps.internal
