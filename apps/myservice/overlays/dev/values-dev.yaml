@@ -1,0 +1,21 @@
+image:
+  repository: trialax5htd.jfrog.io/docker-local/myservice
+  tag: "DEV_TAG_WILL_BE_SET_BY_CI"
+
+replicaCount: 2
+
+service:
+  type: ClusterIP
+  port: 80
+
+route:
+  enabled: true
+  host: myservice-dev.apps.example.internal
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "500m"
+    memory: "256Mi"

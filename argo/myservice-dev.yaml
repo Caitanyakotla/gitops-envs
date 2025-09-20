@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myservice-dev
+  namespace: openshift-gitops
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:org/gitops-envs.git
+    targetRevision: main
+    path: apps/myservice/dev
+    helm:
+      valueFiles:
+        - values-dev.yaml
+      chart: myservice
+      repoURL: https://trialax5htd.jfrog.io/artifactory/helm-local
+      releaseName: myservice-dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: team-a-dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

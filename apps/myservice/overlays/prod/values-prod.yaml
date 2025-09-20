@@ -1,0 +1,8 @@
+image:
+  repository: trialax5htd.jfrog.io/docker-local/myservice
+  tag: "PROD_TAG_WILL_BE_SET_BY_CI"
+
+replicaCount: 3
+route:
+  enabled: true
+  host: myservice-prod.apps.example.internal
