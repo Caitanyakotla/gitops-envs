@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: git@github.com:Caitanyakotla/gitops-envs.git
     targetRevision: main
-    path: apps/myservice/dev
+    path: apps/myservice/overlays/dev
     helm:
       valueFiles:
         - values-dev.yaml
